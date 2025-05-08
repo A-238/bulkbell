@@ -1,0 +1,15 @@
+services:
+  astro:
+    container_name: astro
+    build:
+      context: .
+      dockerfile: ./infra/docker/node/Dockerfile
+    ports:
+      - "4321:4321"
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    working_dir: /app
+    environment:
+      - NODE_ENV=development
+    tty: true
