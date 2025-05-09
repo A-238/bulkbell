@@ -1,11 +1,93 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>bulkbell - 筋トレやる気サポート</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #b32424;
+      color: #fff;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .content {
+      flex: 1;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+    .logo::before {
+      content: "🔔 ";
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .button {
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .email-btn {
+      background-color: #fff;
+      color: #222;
+    }
+    .line-btn {
+      background-color: #00c300;
+      color: #fff;
+    }
+    .image {
+      flex: 1;
+      background-image: url("../assets/bulkbellman.png");
+      background-size: cover;
+      background-position: center top;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="logo">BulkBell</div>
+      <h1>週に設定した曜日に<br>筋トレのやる気を<br>高めるメッセージをお届け</h1>
+      <p>メールアドレスやLINEアカウントを連携して、モチベーションをサポートします</p>
+      <div class="buttons">
+        <a href="#" class="button email-btn">メールアドレスで連携</a>
+        <a href="#" class="button line-btn">LINEアカウントで連携</a>
+      </div>
+    </div>
+    <div class="image"></div>
+  </div>
+</body>
+</html>
